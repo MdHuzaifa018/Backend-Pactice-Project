@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const methodOverride = require('method-override');
 const path = require ("path");
-const port = 8080;
+const port = process.env.PORT || 8080 ;
 
 const {v4: uuidv4} = require("uuid");
 app.use(express.urlencoded({extended:true}));
@@ -86,5 +86,5 @@ app.get("/posts/:id", (req,res)=>{ // app.post POST request ke liye
  })
 
 app.listen(port,()=>{
-    console.log("listening to port : 8080");
+    console.log(`server at http://localhost:${port}`);
 });
