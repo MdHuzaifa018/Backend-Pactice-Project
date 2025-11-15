@@ -35,7 +35,10 @@ let posts = [// let is liye kiya taki data ko delete kar paye if i use const the
 ]
  
 
-
+app.get("/",(req,res)=>{ // app.get GET request ke liye & /posts ye RESTfull APIs hai isme noun use krte hai na ki verb
+    
+    res.render("index.ejs", {posts}); // req.render file send karne ke liye karte hai
+});
 
 //----------Route-------------//
 app.get("/posts",(req,res)=>{ // app.get GET request ke liye & /posts ye RESTfull APIs hai isme noun use krte hai na ki verb
